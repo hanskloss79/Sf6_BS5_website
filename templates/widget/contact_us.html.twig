@@ -1,0 +1,47 @@
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="contactModalLabel">Skontakuj się z nami</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+
+				{% if successMessage is not null %}
+					<div class="alert alert-success" role="alert">
+						{{ successMessage }}
+					</div>
+				{% else %}
+					{{ form_start(form, {action: path('contactus')}) }}
+					{{ form(form) }}
+				{% endif %}
+
+
+					{#				<form>
+								<div class="mb-3">
+																					<label for="recipient-name" class="col-form-label">Nadawca:</label>
+																					<input type="text" class="form-control" id="recipient-name">
+																				</div>
+																				<div class="mb-3">
+																					<label for="recipient-email" class="col-form-label">Email nadawcy:</label>
+																					<input type="text" class="form-control" id="recipient-email">
+																				</div>
+																				<div class="mb-3">
+																					<label for="message-subject" class="col-form-label">Temat:</label>
+																					<input type="text" class="form-control" id="message-subject">
+																				</div>
+																				<div class="mb-3">
+																					<label for="message-text" class="col-form-label">Wiadomość:</label>
+																					<textarea class="form-control" id="message-text"></textarea>
+																				</div>
+																				<div>
+																					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+																					<button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
+																				</div>
+																			</form> #}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="{{ asset('js/contact-form.js')}}"></script>
